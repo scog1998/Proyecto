@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, Response, session
 from flask_mysqldb import MySQL
 
 app = Flask(__name__)
@@ -19,6 +19,24 @@ def iniciarsesion():
 @app.route('/crear')
 def crearcuenta():
     return render_template('crear.html')
+
+@app.route('/acceso-login', methods=["GET", "POST"])
+def acceso():
+    if request.method == 'POST' and 'correo' in request.form and 'contraseña':
+        _email = request.form['correo']
+        _password = request.form['contraseña']
+
+        cur=mysql.connection.cursor
+        cur.execute('SELECT * FROM usuarios WHERE correo = %s AND contasena = %s',(_email,_password))
+        account = cur.fetchone()
+
+        if account:
+            session['logeado'] = True
+            session['id_usuario'] = account['id_usuario']
+            return render_template('acceso.html')
+        else:
+
+            return render_template('iniciar.html', mensaje="Usuario Incorecto")
 
 if __name__ == '__main__':
     app.run(port=3000, debug= True)

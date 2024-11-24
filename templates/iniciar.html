@@ -7,18 +7,23 @@
   <link rel="stylesheet" href="/static/styles2.css">
 </head>
 <body>
-  <div class="form-container">
-    <h1>Login</h1>
-    <p>Sign in to continue</p>
-    <form>
-      <label for="email">EMAIL</label>
-      <input type="email" id="email" placeholder="example@app.com" required>
-      
-      <label for="password">PASSWORD</label>
-      <input type="password" id="password" placeholder="******" required>
-      
-      <button type="submit">log in</button>
-    </form>
-  </div>
+  <form class="from-control" action="acceso" method="post">
+    {% if mensaje %}
+      {{ mensaje }}
+    {% endif %}
+    <div class="form-container">
+      <h1>Iniciar sesion</h1>
+      <p>No tienes una cuenta? <a href="crear">click aquí</a>.</p>
+      <form>
+        <label for="email">EMAIL</label>
+        <input type="email" id="email" placeholder="example@app.com" required name="correo">
+        
+        <label for="password">PASSWORD</label>
+        <input type="password" id="password" placeholder="******" required name="contraseña">
+        
+        <button type="submit">Iniciar Sesion</button>
+      </form>
+    </div>
+  </form>  
 </body>
 </html>
