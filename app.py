@@ -33,7 +33,7 @@ def acceso():
         if account:
             session['logeado'] = True
             session['id_usuario'] = account['id_usuario']
-            return render_template('acceso.html')
+            return render_template('acceso-login.html')
         else:
 
             return render_template('iniciar.html', mensaje="Usuario Incorecto")
