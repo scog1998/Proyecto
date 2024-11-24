@@ -1,9 +1,34 @@
-<!DOCTYPE html>  
-<html lang="es">  
+<!DOCTYPE html>
+<html lang="es">
 <head>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crear Cuenta</title>
+  <link rel="stylesheet" href="/static/styles2.css">
 </head>
 <body>
-
+  <div class="form-container">
+    <h1>Crear Cuenta</h1>
+    <p>Ya tienes una cuenta? <a href="crear.html">click aquí</a>.</p>
+    <form>
+      <label for="name">NOMBRES</label>
+      <input type="text" id="name" placeholder="Nombre completo" required>
+      
+      <label for="email">EMAIL</label>
+      <input type="email" id="email" placeholder="example@app.com" required>
+      
+      <label for="password">CONTRASEÑA</label>
+      <input type="password" id="password" placeholder="******" required>
+      
+      <label for="dob">FECHA DE NACIMIENTO</label>
+      <select id="dob">
+        <option value="">Seleccionar</option>
+        <option value="1990">1990</option>
+        <option value="2000">2000</option>
+      </select>
+      
+      <button type="submit">sign up</button>
+    </form>
+  </div>
 </body>
 </html>
