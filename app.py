@@ -16,7 +16,7 @@ def index():
 def iniciarsesion():
     return render_template('iniciar-sesion.html')
 
-@app.route('crear-cuenta')
+@app.route('/crear-cuenta')
 def crearcuenta():
     return render_template('crear-cuenta.html')
 
