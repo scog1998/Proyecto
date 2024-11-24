@@ -1,40 +1,44 @@
-<!DOCTYPE html>  
-<html lang="es">  
+<!DOCTYPE html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transporte Online</title>
-    <link rel="stylesheet" href="/static/styles.css">  
-</head>  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transporte Online</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
 <body>
-    <div class="container">
-            <header>
-                <h1>Transporte Online</h1>
-                <p>Podrás ver a tiempo real las rutas de los buses con sus paradas a tiempo real</p>
-            </header>
-            <div class="cell">
-                <div class="phone">
-                    <div class="map">
-                        <div class="pin"></div>
-                        <div class="pin"></div>
-                        <div class="pin"></div>
-                    </div>
-                    <div class="info">Información sobre las rutas de los buses</div>
-                </div>
+  <div class="container">
+    <div class="txt">
+      <h1>Transporte Online</h1>
+      <p>Podrás ver a tiempo real las rutas de los buses con sus paradas a tiempo real.</p>
+      <div class="btns">
+            <form action="/iniciar" method="post">
+                <button class="btn-inicio">Iniciar sesión</button>
+            </form>
+            <form action="/crear" method="post">
+                <button class="btn-crear">Crear Cuenta</button>
+            </form>
+      </div>
+      <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+    <div class="img">
+      <div class="phone">
+        <div class="screen">
+          <div class="map"></div>
+          <div class="details">
+            <p>...</p>
+            <div class="ubi">
+              <p>📍 Ubicación 1</p>
+              <p>📍 Ubicación 2</p>
             </div>
-        <div class="btns">
-            <form action="iniciar-sesion" method="post">
-                <button class="btn-inciar">Iniciar sesión</button>
-            </form>
-            <form action="/crear-cuenta" method="post">
-                <button type="submit" class="btn-crear">Crear Cuenta</button>
-            </form>
+          </div>
         </div>
-        <div class="indicadores">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
-    </div>  
-</body>  
-</html>  
+      </div>
+    </div>
+  </div>
+</body>
+</html>

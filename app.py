@@ -12,13 +12,13 @@ mysql = MySQL(app)
 def index():
     return render_template("index.html")
 
-@app.route('/iniciar-sesion')
+@app.route('/iniciar')
 def iniciarsesion():
-    return render_template('iniciar-sesion.html')
+    return render_template('iniciar.html')
 
-@app.route('/crear-cuenta')
+@app.route('/crear')
 def crearcuenta():
-    return render_template('crear-cuenta.html')
+    return render_template('crear.html')
 
 if __name__ == '__main__':
     app.run(port=3000, debug= True)
