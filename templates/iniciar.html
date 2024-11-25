@@ -7,23 +7,20 @@
   <link rel="stylesheet" href="/static/styles2.css">
 </head>
 <body>
-  <form class="from-control" action="acceso" method="post">
-    {% if mensaje %}
-      {{ mensaje }}
-    {% endif %}
+<form class="formulario" action="principal" method="POST">
     <div class="form-container">
       <h1>Iniciar sesion</h1>
       <p>No tienes una cuenta? <a href="crear">click aquí</a>.</p>
       <form>
         <label for="email">EMAIL</label>
-        <input type="email" id="email" placeholder="example@app.com" required name="correo">
+        <input type="email" id="email" name="correo" placeholder="example@app.com" required >
         
         <label for="password">PASSWORD</label>
-        <input type="password" id="password" placeholder="******" required name="contraseña">
+        <input type="password" id="password" name="contrasena" placeholder="******" required >
         
         <button type="submit">Iniciar Sesion</button>
       </form>
     </div>
-  </form>  
+  </form>
 </body>
 </html>
