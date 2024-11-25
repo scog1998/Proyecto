@@ -9,4 +9,4 @@ class User:
 
     @classmethod
     def check_password(cls, hashed_password, password):
-        return check_password_hash(hashed_password, password)  # Verifica la contraseña
+        return check_password_hash(hashed_password, password)  

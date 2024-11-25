@@ -28,33 +28,23 @@ def iniciarsesion():
 @app.route('/principal', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        # Crear una instancia de User con los parámetros adecuados
-        user = User(
+            user = User()
             id_usuario=0, 
-            nombre_usuario=None,  # Si no lo necesitas por ahora, puedes dejarlo como None
+            nombre_usuario=None, 
             correo=request.form['correo'], 
-            contrasena=request.form['contrasena']
-        )
+            contrasena=request.form['contrasena']               
+            user_model = modeluser()
+            logged_user = user_model.login(mysql, user)
 
-        # Crear una instancia de modeluser
-        user_model = modeluser()
-
-        # Verificar el usuario en la base de datos
-        logged_user = user_model.login(mysql, user)
-
-        if logged_user is not None:
-            if User.check_password(logged_user['contrasena'], user.contrasena):  # Verificación correcta de la contraseña
+    if logged_user is not None:
+            if User.check_password(logged_user['contrasena'], user.contrasena):  
                 return redirect(url_for('principal'))
             else:
                 flash("Contraseña Incorrecta") 
                 return render_template('iniciar.html')
-        else:
+    else:
             flash("Usuario Incorrecto") 
-            return render_template('iniciar.html')
-    
-    return render_template('iniciar.html') 
-
-    
+            return render_template('iniciar.html')  
 @app.route('/crear')
 def crearcuenta():
     return render_template('crear.html')
